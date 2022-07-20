@@ -3,25 +3,26 @@ kind: PostgresCluster
 metadata:
   name: hippo
 spec:
-  image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-14.4-0
-  postgresVersion: 14
+  image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.11-5.1.2-0
+  postgresVersion: 12
   instances:
     - name: instance1
+      replicas: 3
       dataVolumeClaimSpec:
         accessModes:
-        - "ReadWriteOnce"
+          - "ReadWriteOnce"
         resources:
           requests:
             storage: 1Gi
   backups:
     pgbackrest:
-      image: registry.developers.crunchydata.com/crunchydata/crunchy-pgbackrest:ubi8-2.38-2
+      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.1.2-0
       repos:
-      - name: repo1
-        volume:
-          volumeClaimSpec:
-            accessModes:
-            - "ReadWriteOnce"
-            resources:
-              requests:
-                storage: 1Gi
+        - name: repo1
+          volume:
+            volumeClaimSpec:
+              accessModes:
+                - "ReadWriteOnce"
+              resources:
+                requests:
+                  storage: 1Gi

@@ -1,0 +1,9 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  proxy:
+    pgBouncer:
+      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbouncer:ubi8-5.1.2-0
+      replicas: 3

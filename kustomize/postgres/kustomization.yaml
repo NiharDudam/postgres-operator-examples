@@ -1,4 +1,9 @@
 namespace: postgres-operator
 
 resources:
-- postgres.yaml
+  - postgres.yaml
+
+
+patchesStrategicMerge:
+  - ibm/postgres-user.yaml
+  - ibm/pgbouncer.yaml

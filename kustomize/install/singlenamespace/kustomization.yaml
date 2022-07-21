@@ -3,7 +3,6 @@ commonLabels:
   app.kubernetes.io/name: pgo
   app.kubernetes.io/version: 5.1.2
 bases:
-  - ../crd
   - ../rbac/namespace
   - ../manager
 images:
@@ -21,4 +20,5 @@ patchesJson6902:
     path: selectors.yaml
 patchesStrategicMerge:
   - manager-target.yaml
+  - ibm/custom-related-images.yaml
   #- manager-target-upgrade.yaml

@@ -1,0 +1,32 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        use_pg_rewind: false
+        parameters:
+          # logging params
+          logging_collector: on
+          log_directory: pglogs
+          log_duration: off
+          log_statement: 'ddl' # none, ddl, mod, all
+          log_temp_files: 0 # log temporary files equal or larger than the specified size in kilobytes; -1 disables, 0 logs all temp files
+          log_line_prefix: '%m [%p][%a]'
+          max_wal_senders: 30
+          max_worker_processes: 40
+          wal_level: logical
+          max_replication_slots: 20
+          max_logical_replication_workers: 20
+          max_sync_workers_per_subscription: 5
+          shared_buffers: 2GB
+          work_mem: 8MB
+          shared_preload_libraries: pgaudit.so
+          max_connections: 300
+          maintenance_work_mem: 512MB 		# min 1MB
+          effective_cache_size: 4GB 
+          autovacuum_vacuum_cost_limit: 1000
+          autovacuum_vacuum_scale_factor: 0.01
+          archive_timeout: 3600 # default archive_timeout to 3600s

@@ -1,0 +1,25 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  metadata:
+    labels:
+      customLabel1: value1
+      customLabel2: value2
+      customLabel3: value3
+  backups:
+    pgbackrest:
+      metadata:
+        labels:
+          customLabel1: value1
+          customLabel2: value2
+          customLabel3: value3
+  proxy:
+    pgBouncer:
+      metadata:
+        labels:
+          customLabel1: value1
+          customLabel2: value2
+          customLabel3: value3
+

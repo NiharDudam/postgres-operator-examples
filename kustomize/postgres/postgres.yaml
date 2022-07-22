@@ -6,11 +6,43 @@ spec:
   image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.11-5.1.2-0
   postgresVersion: 12
   instances:
-    - name: instance1
+    - name: postgres
+      metadata:
+        labels:
+          customLabel1: value1
+          customLabel2: value2
+          customLabel3: value3
+        annotations:
+          customAnnotate1: "value1"
+          customAnnotate2: "value2"
+          customAnnotate3: "value3"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  postgres-operator.crunchydata.com/cluster: hippo
+                  postgres-operator.crunchydata.com/instance-set: postgres
       replicas: 3
+      resources:
+        requests:
+          cpu: 600m
+          memory: 512Mi
+        limits:
+          cpu: 1500m
+          memory: 8Gi
       dataVolumeClaimSpec:
         accessModes:
           - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 1Gi
+      walVolumeClaimSpec:
+        accessModes:
+        - "ReadWriteOnce"
         resources:
           requests:
             storage: 1Gi

@@ -1,0 +1,15 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  backups:
+    pgbackrest:
+      repoHost:
+        resources:
+          requests:
+            cpu: 80m
+            memory: 48Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi

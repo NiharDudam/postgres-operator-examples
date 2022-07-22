@@ -19,6 +19,13 @@ spec:
       containers:
       - name: operator
         image: postgres-operator
+        resources:
+          requests:
+            cpu: 40m
+            memory: 256Mi
+          limits:
+            cpu: 100m
+            memory: 256Mi
         env:
         - name: PGO_NAMESPACE
           valueFrom:

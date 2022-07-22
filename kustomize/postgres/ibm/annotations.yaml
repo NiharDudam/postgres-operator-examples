@@ -1,0 +1,24 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  metadata:
+    annotations:
+      customAnnotate1: "value1"
+      customAnnotate2: "value2"
+      customAnnotate3: "value3"
+  backups:
+    pgbackrest:
+      metadata:
+        annotations:
+          customAnnotate1: "value1"
+          customAnnotate2: "value2"
+          customAnnotate3: "value3"
+  proxy:
+    pgBouncer:
+      metadata:
+        annotations:
+          customAnnotate1: "value1"
+          customAnnotate2: "value2"
+          customAnnotate3: "value3"

@@ -1,0 +1,12 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  proxy:
+    pgBouncer:
+      config:
+        global:
+          max_client_conn: "400"
+          min_pool_size: "5"
+          pool_mode: transaction

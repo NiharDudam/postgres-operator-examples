@@ -1,0 +1,14 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  proxy:
+    pgBouncer:
+      resources:
+        requests:
+          cpu: 80m
+          memory: 24Mi
+        limits:
+          cpu: 200m
+          memory: 128Mi

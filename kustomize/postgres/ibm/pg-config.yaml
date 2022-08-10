@@ -30,3 +30,5 @@ spec:
           autovacuum_vacuum_cost_limit: 1000
           autovacuum_vacuum_scale_factor: 0.01
           archive_timeout: 3600 # default archive_timeout to 3600s
+        pg_hba:
+        - hostssl all all all cert

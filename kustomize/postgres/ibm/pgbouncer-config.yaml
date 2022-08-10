@@ -5,8 +5,25 @@ metadata:
 spec:
   proxy:
     pgBouncer:
+      customTLSSecret:
+        name: m1-pgbouncer-server
       config:
+        files:
+        - secret:
+            name: m1-db-client-apicuser
         global:
+          auth_type: "cert"
+          #verbose: "2"
+          client_tls_sslmode: verify-full
+          server_tls_cert_file: /etc/pgbouncer/tls.crt
+          server_tls_key_file: /etc/pgbouncer/tls.key
+          server_tls_sslmode: verify-full
           max_client_conn: "400"
           min_pool_size: "5"
           pool_mode: transaction
+          server_reset_query: DEALLOCATE ALL
+        databases:
+          apim: host=hippo-primary port=5432 dbname=apim pool_size=100
+          lur: host=hippo-primary port=5432 dbname=lur pool_size=20
+          apitest: host=hippo-primary port=5432 dbname=apitest pool_size=5
+          '*': host=hippo-primary port=5432

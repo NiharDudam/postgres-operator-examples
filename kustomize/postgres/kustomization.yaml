@@ -5,7 +5,7 @@ resources:
 
 
 patchesStrategicMerge:
-  - ibm/postgres-user.yaml
+  - ibm/pg-users.yaml
   - ibm/pgbouncer.yaml
   - ibm/labels.yaml
   - ibm/annotations.yaml
@@ -14,3 +14,5 @@ patchesStrategicMerge:
   - ibm/pgbackrest-resouces.yaml
   - ibm/pgbouncer-resources.yaml
   - ibm/pgbouncer-config.yaml
+  #- ibm/pgadmin.yaml
+  - ibm/custom-tls-postgres.yaml

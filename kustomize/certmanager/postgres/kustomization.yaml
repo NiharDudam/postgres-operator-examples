@@ -3,4 +3,6 @@ namespace: postgres-operator
 resources:
 - cert.yaml
 - cert-repl.yaml
-- postgres.yaml
+- pgbouncer.yaml
+
+#- postgres.yaml

@@ -1,0 +1,25 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  userInterface:
+    pgAdmin:
+      config:
+        files:
+        - secret:
+            name: m1-db-client-apicuser
+            # items:
+            # - key: ca.crt
+            #   path: /var/lib/pgadmin/storage/apicuser@pgo/root.crt
+            # - key: tls.crt
+            #   path:  /var/lib/pgadmin/storage/apicuser@pgo/tls.crt
+            # - key: tls.key
+            #   path:  /var/lib/pgadmin/storage/apicuser@pgo/tls.key
+      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgadmin4:ubi8-5.1.2-0
+      dataVolumeClaimSpec:
+        accessModes:
+        - "ReadWriteOnce"
+        resources:
+          requests:
+            storage: 1Gi

@@ -4,4 +4,5 @@ metadata:
   name: hippo
 spec:
   users:
-    - name: postgres
+  - name: postgres
+  - name: apicuser

@@ -5,6 +5,7 @@ metadata:
 spec:
   patroni:
     dynamicConfiguration:
+      max_timelines_history: 50
       postgresql:
         use_pg_rewind: false
         parameters:

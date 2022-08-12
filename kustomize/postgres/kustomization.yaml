@@ -5,14 +5,27 @@ resources:
 
 
 patchesStrategicMerge:
-  - ibm/pg-users.yaml
-  - ibm/pgbouncer.yaml
+
+## common
   - ibm/labels.yaml
   - ibm/annotations.yaml
-  - ibm/bouncer-affinity.yaml
-  - ibm/pg-config.yaml
   - ibm/pgbackrest-resouces.yaml
-  - ibm/pgbouncer-resources.yaml
-  - ibm/pgbouncer-config.yaml
   #- ibm/pgadmin.yaml
-  - ibm/custom-tls-postgres.yaml
+
+## postgres specific 
+  - ibm/postgres/pg-users.yaml
+  - ibm/postgres/pg-config.yaml
+  - ibm/postgres/custom-tls-postgres.yaml
+
+## bouncer specific 
+  - ibm/pgbouncer/pgbouncer.yaml
+  - ibm/pgbouncer/bouncer-affinity.yaml
+  - ibm/pgbouncer/pgbouncer-resources.yaml
+  - ibm/pgbouncer/pgbouncer-config.yaml
+
+## backups 
+  - ibm/backup/local.yaml
+
+## below is needed if apic installation is not present. 
+  # - bouncer-tls.yaml
+  # - postgres-tls.yaml

@@ -49,12 +49,3 @@ spec:
   backups:
     pgbackrest:
       image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.1.2-0
-      repos:
-        - name: repo1
-          volume:
-            volumeClaimSpec:
-              accessModes:
-                - "ReadWriteOnce"
-              resources:
-                requests:
-                  storage: 1Gi

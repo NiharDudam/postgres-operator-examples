@@ -12,6 +12,7 @@ spec:
         - secret:
             name: m1-db-client-apicuser
         global:
+          #logfile: /dev/stdout
           auth_type: "cert"
           #verbose: "2"
           client_tls_sslmode: verify-full

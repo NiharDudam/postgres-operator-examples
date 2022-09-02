@@ -3,7 +3,7 @@ kind: PostgresCluster
 metadata:
   name: hippo
 spec:
-  image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.11-5.1.2-0
+  image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.12-5.2.0-0
   postgresVersion: 12
   instances:
     - name: postgres
@@ -48,4 +48,4 @@ spec:
             storage: 1Gi
   backups:
     pgbackrest:
-      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.1.2-0
+      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.2.0-0

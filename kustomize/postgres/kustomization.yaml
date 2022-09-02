@@ -1,4 +1,4 @@
-namespace: postgres-operator
+namespace: postgres-operator1
 
 secretGenerator:
 - name: aws-s3-creds
@@ -32,9 +32,12 @@ patchesStrategicMerge:
   - ibm/pgbouncer/pgbouncer-config.yaml
 
 ## backups 
-  # - ibm/backup/local.yaml
+  #- ibm/backup/local.yaml
   - ibm/backup/s3.yaml
 
+## restore 
+  - ibm/restore/local.yaml
+
 ## below is needed if apic installation is not present. 
-  # - bouncer-tls.yaml
-  # - postgres-tls.yaml
+  - bouncer-tls.yaml
+  - postgres-tls.yaml

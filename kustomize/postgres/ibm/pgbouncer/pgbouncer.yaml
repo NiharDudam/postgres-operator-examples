@@ -5,5 +5,5 @@ metadata:
 spec:
   proxy:
     pgBouncer:
-      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbouncer:ubi8-5.1.2-0
+      image: apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbouncer:ubi8-5.2.0-0
       replicas: 3

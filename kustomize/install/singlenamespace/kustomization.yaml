@@ -1,14 +1,14 @@
-namespace: postgres-operator
+namespace: postgres-operator1
 commonLabels:
   app.kubernetes.io/name: pgo
-  app.kubernetes.io/version: 5.1.2
+  app.kubernetes.io/version: 5.2.0
 bases:
   - ../rbac/namespace
   - ../manager
 images:
   - name: postgres-operator
     newName: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/postgres-operator"
-    newTag: ubi8-5.1.2-0
+    newTag: ubi8-5.2.0-0
 # - name: postgres-operator-upgrade
 #   newName: registry.developers.crunchydata.com/crunchydata/postgres-operator-upgrade
 #   newTag: ubi8-5.1.2-0

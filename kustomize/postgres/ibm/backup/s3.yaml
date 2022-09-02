@@ -8,11 +8,15 @@ spec:
       configuration:
         - secret:
             name: aws-s3-creds
+      manual:
+        repoName: repo1
+        options:
+          - --type=full
       global:
-        repo1-path: /m1/postgres-operator/hippo-2022-08-13:01:08:47/repo1
+        repo1-path: /m1/postgres-operator/postgresdb/hippo-2022-09-02:05:22:46/repo1
       repos:
         - name: repo1
           s3:
-            bucket: "niharns-cert-1"
-            endpoint: "s3.eu-west-1.amazonaws.com"
-            region: "eu-west-1"
+            bucket: "nihar-crunchy-v5"
+            endpoint: "s3.amazonaws.com"
+            region: "us-west-1"

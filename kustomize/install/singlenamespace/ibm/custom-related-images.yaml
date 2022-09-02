@@ -10,8 +10,8 @@ spec:
         - name: operator
           env:
             - name: RELATED_IMAGE_POSTGRES_12
-              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.11-5.1.2-0"
+              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-postgres:ubi8-12.12-5.2.0-0"
             - name: RELATED_IMAGE_PGBACKREST
-              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.1.2-0"
+              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbackrest:ubi8-5.2.0-0"
             - name: RELATED_IMAGE_PGBOUNCER
-              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbouncer:ubi8-5.1.2-0"
+              value: "apic-dev-docker-local.artifactory.swg-devops.com/nihar/crunchy-pgbouncer:ubi8-5.2.0-0"

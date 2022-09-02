@@ -18,8 +18,8 @@ spec:
       configuration:
       - secret:
           name: pgo-s3-creds
-      global:
-        repo1-path: /pgbackrest/postgres-operator/hippo-s3/repo1
+      # global:
+      #   repo1-path: /pgbackrest/postgres-operator/hippo-s3/repo1
       repos:
       - name: repo1
         s3:

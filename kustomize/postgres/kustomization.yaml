@@ -36,7 +36,8 @@ patchesStrategicMerge:
   - ibm/backup/s3.yaml
 
 ## restore 
-  - ibm/restore/local.yaml
+  #- ibm/restore/in-place.yaml
+  - ibm/restore/dr.yaml
 
 ## below is needed if apic installation is not present. 
   - bouncer-tls.yaml

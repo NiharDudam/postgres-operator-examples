@@ -7,18 +7,19 @@ spec:
     pgbackrest:
       configuration:
         - secret:
-            name: aws-s3-creds
+            name: local-minio-s3-creds
       manual:
         repoName: repo1
         options:
           - --type=full
       global:
         repo1-path: /m1/postgres-operator/postgresdb/hippo-2022-09-08:23:36:09/repo1
+        repo1-s3-uri-style: path
       repos:
         - name: repo1
           schedules:
             full: "*/10 * * * *"
           s3:
-            bucket: "nihar-crunchy-v5"
-            endpoint: "s3.amazonaws.com"
-            region: "us-west-1"
+            bucket: "nihar"
+            endpoint: "minio.minio.svc.cluster.local"
+            region: "us-east-1"

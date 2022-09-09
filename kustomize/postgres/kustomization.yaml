@@ -4,6 +4,10 @@ secretGenerator:
 - name: aws-s3-creds
   files:
   - ibm/backup/s3.conf
+- name: local-minio-s3-creds
+  files:
+  - ibm/backup/local-minio-s3.conf
+  - ibm/backup/local-minio-s3-ca.crt
 
 generatorOptions:
   disableNameSuffixHash: true
@@ -33,11 +37,12 @@ patchesStrategicMerge:
 
 ## backups 
   #- ibm/backup/local.yaml
-  - ibm/backup/s3.yaml
+  #- ibm/backup/s3.yaml
+  - ibm/backup/local-minio-s3.yaml
 
 ## restore 
   #- ibm/restore/in-place.yaml
-  - ibm/restore/dr.yaml
+  #- ibm/restore/dr.yaml
 
 ## below is needed if apic installation is not present. 
   - bouncer-tls.yaml

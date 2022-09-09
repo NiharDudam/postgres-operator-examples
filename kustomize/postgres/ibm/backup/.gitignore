@@ -1,1 +1,3 @@
 s3.conf
+local-minio-s3.conf
+local-minio-s3-ca.crt

@@ -6,8 +6,8 @@ spec:
   backups:
     pgbackrest:
     #   global:
-        # repo1-retention-full: "2"
-        # repo1-retention-full-type: count
+    #     repo1-retention-full: "1"
+    #     repo1-retention-full-type: count
         # repo1-retention-full: "1"
         # repo1-retention-full-type: time
       manual:

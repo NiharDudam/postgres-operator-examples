@@ -1,49 +1,43 @@
-namespace: postgres-operator1
-
+namespace: "postgres-operator1"
 secretGenerator:
-- name: aws-s3-creds
-  files:
-  - ibm/backup/s3.conf
-- name: local-minio-s3-creds
-  files:
-  - ibm/backup/local-minio-s3.conf
-  - ibm/backup/local-minio-s3-ca.crt
-
+  - name: aws-s3-creds
+    files:
+      - ibm/backup/s3.conf
+  - name: local-minio-s3-creds
+    files:
+      - ibm/backup/local-minio-s3.conf
+      - ibm/backup/local-minio-s3-ca.crt
 generatorOptions:
   disableNameSuffixHash: true
-
 resources:
   - postgres.yaml
-
-
 patchesStrategicMerge:
-
-## common
+  ## common
   - ibm/labels.yaml
   - ibm/annotations.yaml
   - ibm/pgbackrest-resouces.yaml
   #- ibm/pgadmin.yaml
 
-## postgres specific 
+  ## postgres specific 
   - ibm/postgres/pg-users.yaml
   - ibm/postgres/pg-config.yaml
   - ibm/postgres/custom-tls-postgres.yaml
-
-## bouncer specific 
+  ## bouncer specific 
   - ibm/pgbouncer/pgbouncer.yaml
   - ibm/pgbouncer/bouncer-affinity.yaml
   - ibm/pgbouncer/pgbouncer-resources.yaml
   - ibm/pgbouncer/pgbouncer-config.yaml
-
-## backups 
-  #- ibm/backup/local.yaml
-  - ibm/backup/s3.yaml
+  ## backups 
+  - ibm/backup/local.yaml
+  #- ibm/backup/s3.yaml
   #- ibm/backup/local-minio-s3.yaml
 
-## restore 
-  - ibm/restore/in-place.yaml
+  ## restore 
+  #- ibm/restore/in-place.yaml
   #- ibm/restore/dr.yaml
 
-## below is needed if apic installation is not present. 
+  # 2dc ha logical
+  - ibm/2dcha-logical/customconfig.yaml
+  ## below is needed if apic installation is not present. 
   - bouncer-tls.yaml
   - postgres-tls.yaml

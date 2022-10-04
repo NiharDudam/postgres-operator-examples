@@ -13,7 +13,7 @@ spec:
         options:
           - --type=full
       global:
-        repo1-path: /m1/postgres-operator/postgresdb/hippo-2022-09-17:02:15:48/repo1
+        repo1-path: /pgo/hippo-2022-10-04:22:17:32/repo1
         repo1-s3-uri-style: path
       repos:
         - name: repo1

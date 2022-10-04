@@ -1,0 +1,25 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  dataSource:
+    pgbackrest:
+      stanza: db
+      configuration:
+        - secret:
+            name: aws-s3-creds
+      global:
+        repo1-path: /m1/postgres-operator/postgresdb/hippo-2022-09-02:04:02:03/repo1
+      options:
+        - --type=immediate
+        #- --set=20220902-052528F # 3 rows
+        - --set=20220902-045330F # 1 rows 
+        #- --set=20220902-054021F  # 0 rows
+        #- --set=20220902-033247F # 13 rows
+      repo:
+        name: repo1
+        s3:
+          bucket: "nihar-crunchy-v5"
+          endpoint: "s3.amazonaws.com"
+          region: "us-west-1"

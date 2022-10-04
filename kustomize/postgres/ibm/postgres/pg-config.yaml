@@ -7,7 +7,8 @@ spec:
     dynamicConfiguration:
       max_timelines_history: 50
       postgresql:
-        use_pg_rewind: false
+        # use_pg_rewind: false ## Removing as it's defaulted to true 
+        use_slots: false
         parameters:
           # logging params
           logging_collector: on

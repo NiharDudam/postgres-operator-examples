@@ -1,0 +1,19 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  config:
+    files:
+    - secret:
+        items:
+        - key: tls.key
+          mode: 0600
+          path: apicusertls/tls.key
+        - key: tls.crt
+          mode: 0600
+          path: apicusertls/tls.crt
+        - key: ca.crt
+          mode: 0600
+          path: apicusertls/ca.crt
+        name: hippo-apicuser-tls

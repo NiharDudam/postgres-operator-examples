@@ -5,11 +5,11 @@ metadata:
 spec:
   backups:
     pgbackrest:
-    #   global:
+      global:
     #     repo1-retention-full: "1"
     #     repo1-retention-full-type: count
-        # repo1-retention-full: "1"
-        # repo1-retention-full-type: time
+        repo1-retention-full: "1"
+        repo1-retention-full-type: time
       manual:
         repoName: repo1
         options:
@@ -25,3 +25,13 @@ spec:
               resources:
                 requests:
                   storage: 1Gi
+        # - name: repo2
+        #   schedules:
+        #     full: "50 1 * * *"
+        #   volume:
+        #     volumeClaimSpec:
+        #       accessModes:
+        #         - "ReadWriteOnce"
+        #       resources:
+        #         requests:
+        #           storage: 1Gi

@@ -1,0 +1,11 @@
+spec:
+  dataSource:
+    volumes:
+      pgDataVolume:
+        pvcName: m1-13cce69d-postgres
+        directory: m1-13cce69d-postgres
+      pgWALVolume:
+        pvcName: m1-13cce69d-postgres-wal
+      # pgBackRestVolume:
+      #   pvcName: m1-13cce69d-postgres-pgbr-repo
+      #   directory: m1-13cce69d-postgres-backrest-shared-repo

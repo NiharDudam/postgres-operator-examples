@@ -1,4 +1,4 @@
-namespace: postgres-operator1
+namespace: "postgres-operator1"
 commonLabels:
   app.kubernetes.io/name: pgo
   app.kubernetes.io/version: 5.2.0

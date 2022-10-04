@@ -10,7 +10,7 @@ spec:
         repoName: repo1
         options:
         - --type=immediate
-        #- --set=20220916-230004F # 3 rows
-        - --set=20220916-234004F # 10 rows 
+        - --set=20220920-003920F # 3 rows
+        #- --set=20220916-234004F # 10 rows 
         #- --set=20220909-211610F  # 1 rows
         #- --set=20220902-033247F # 13 rows

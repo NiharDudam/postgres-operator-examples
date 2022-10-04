@@ -1,0 +1,13 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  proxy:
+    pgBouncer:
+      customTLSSecret:
+        name: m1-13cce69d-postgres-pgbouncer
+      config:
+        files:
+        - secret:
+            name: m1-db-client-apicuser

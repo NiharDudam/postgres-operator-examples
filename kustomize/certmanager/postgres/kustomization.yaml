@@ -1,9 +1,8 @@
 namespace: postgres-operator1
-
 resources:
-- cert-postgres.yaml
-- cert-repl.yaml
-- cert-pgbouncer.yaml
-- cert-apicuser.yaml
-
+  - cert-postgres.yaml
+  - cert-repl.yaml
+  - cert-pgbouncer.yaml
+  - cert-apicuser.yaml
+  - certs-postgresuser.yaml
 #- postgres.yaml

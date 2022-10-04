@@ -1,0 +1,18 @@
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: PostgresCluster
+metadata:
+  name: hippo
+spec:
+  patroni:
+    dynamicConfiguration:
+      postgresql:
+        use_slots: true
+    slots:
+      sub_apim_alltables:
+        database: apim
+        plugin: pgoutput
+        type: logical
+      sub_lur_alltables:
+        database: lur
+        plugin: pgoutput
+        type: logical
